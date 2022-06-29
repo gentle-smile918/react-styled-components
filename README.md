@@ -1,348 +1,143 @@
-Contribution: 2015-11-20 20:00
 
-Contribution: 2015-11-20 20:01
+<br />
 
-Contribution: 2015-11-20 20:02
+<div align="center">
+  <strong>Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress 💅</strong>
+  <br />
+  <br />
+  <a href="https://www.npmjs.com/package/styled-components"><img src="https://www.styled-components.com/proxy/downloads.svg" alt="downloads: 600k/month"></a>
+  <a href="#backers" alt="sponsors on Open Collective"><img src="https://opencollective.com/styled-components/backers/badge.svg" /></a> <a href="#sponsors" alt="Sponsors on Open Collective"><img src="https://opencollective.com/styled-components/sponsors/badge.svg" /></a> <a href="https://spectrum.chat/styled-components"><img src="https://withspectrum.github.io/badge/badge.svg" alt="Join the community on Spectrum"></a>
+  <a href="https://bundlephobia.com/result?p=styled-components" title="styled-components latest minified+gzip size"><img src="https://badgen.net/bundlephobia/minzip/styled-components" alt="gzip size"></a>
+  <a href="#alternative-installation-methods"><img src="https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg" alt="module formats: umd, cjs, esm"></a>
+  <a href="https://codecov.io/gh/styled-components/styled-components"><img src="https://codecov.io/gh/styled-components/styled-components/coverage.svg?branch=master" alt="Code Coverage"></a>
+</div>
 
-Contribution: 2015-11-20 20:03
+---
 
-Contribution: 2015-11-20 20:04
+## Looking for v5?
 
-Contribution: 2015-11-20 20:05
+The `master` branch is under development of the upcoming v6 major version of styled-components. For changes targeting v5, please point your PRs at the `legacy-v5` branch.
 
-Contribution: 2015-11-23 20:00
+---
 
-Contribution: 2015-11-23 20:01
+Utilising [tagged template literals](https://www.styled-components.com/docs/advanced#tagged-template-literals) (a recent addition to JavaScript) and the [power of CSS](https://www.styled-components.com/docs/api#supported-css), `styled-components` allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
 
-Contribution: 2015-11-23 20:02
+```jsx
+const Button = styled.button`
+  color: grey;
+`;
+```
 
-Contribution: 2015-11-23 20:03
+Alternatively, you may use [style objects](https://www.styled-components.com/docs/advanced#style-objects). This allows for easy porting of CSS from inline styles, while still supporting the more advanced styled-components capabilities like component selectors and media queries.
 
-Contribution: 2015-11-23 20:04
+```jsx
+const Button = styled.button({
+  color: 'grey',
+});
+```
 
-Contribution: 2015-11-25 20:00
+Equivalent to:
 
-Contribution: 2015-11-25 20:01
+```jsx
+const Button = styled.button`
+  color: grey;
+`;
+```
 
-Contribution: 2015-11-25 20:02
+`styled-components` is compatible with both React (for web) and React Native – meaning it's the perfect choice even for truly universal apps! See the [documentation about React Native](https://www.styled-components.com/docs/basics#react-native) for more information.
 
-Contribution: 2015-11-27 20:00
+_Supported by [Front End Center](https://frontend.center). Thank you for making this possible!_
 
-Contribution: 2015-11-27 20:01
+## Upgrading from v4
 
-Contribution: 2015-11-27 20:02
+1. `npm install styled-components@^5.0.0 react@^16.8 react-dom@^16.8 react-is@^16.8`
+1. ??
+1. Profit!
 
-Contribution: 2015-11-30 20:00
+> If you use jest-styled-components, make sure you update that too.
 
-Contribution: 2015-11-30 20:01
+## [Docs](https://www.styled-components.com/docs)
 
-Contribution: 2015-11-30 20:02
+**See the documentation at [styled-components.com/docs](https://www.styled-components.com/docs)** for more information about using `styled-components`!
 
-Contribution: 2015-11-30 20:03
+Quicklinks to some of the most-visited pages:
 
-Contribution: 2015-11-30 20:04
+- [**Getting started**](https://www.styled-components.com/docs/basics)
+- [API Reference](https://styled-components.com/docs/api)
+- [Theming](https://www.styled-components.com/docs/advanced#theming)
+- [Server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
+- [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
 
-Contribution: 2015-11-30 20:05
+## Example
 
-Contribution: 2015-11-30 20:06
+<!-- prettier-ignore -->
+```JSX
+import React from 'react';
 
-Contribution: 2015-12-01 20:00
+import styled from 'styled-components';
 
-Contribution: 2015-12-01 20:01
+// Create a <Title> react component that renders an <h1> which is
+// centered, palevioletred and sized at 1.5em
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
 
-Contribution: 2015-12-01 20:02
+// Create a <Wrapper> react component that renders a <section> with
+// some padding and a papayawhip background
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
 
-Contribution: 2015-12-01 20:03
+// Use them like any other React component – except they're styled!
+<Wrapper>
+  <Title>Hello World, this is my first styled component!</Title>
+</Wrapper>
+```
 
-Contribution: 2015-12-01 20:04
+This is what you'll see in your browser:
 
-Contribution: 2015-12-01 20:05
+<div align="center">
+  <a href="https://styled-components.com">
+    <img alt="Screenshot of the above code ran in a browser" src="http://i.imgur.com/wUJpcjY.jpg" />
+  </a>
+</div>
 
-Contribution: 2015-12-01 20:06
+## Babel Macro
 
-Contribution: 2015-12-01 20:07
+If you're using tooling that has babel-plugin-macros set up, you can switch to the `styled-components/macro` import path instead to gain the effects of the babel plugin without further setup.
 
-Contribution: 2015-12-03 20:00
+```js
+import styled from 'styled-components/macro';
 
-Contribution: 2015-12-03 20:01
+// A static className will be generated for Title (important for SSR)
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+```
 
-Contribution: 2015-12-03 20:02
+If you wish to provide configuration options to the babel plugin similar to how you would in a `.babelrc`, [see this guide](https://github.com/kentcdodds/babel-plugin-macros/blob/master/other/docs/author.md#config-experimental). The config name is `"styledComponents"`.
 
-Contribution: 2015-12-03 20:03
+## Built with `styled-components`
 
-Contribution: 2015-12-03 20:04
+A lot of hard work goes into community libraries, projects, and guides. A lot of them make it easier to get started or help you with your next project! There’s also a whole lot of interesting apps and sites that people have built using styled-components.
 
-Contribution: 2015-12-03 20:05
+Make sure to head over to [awesome-styled-components](https://github.com/styled-components/awesome-styled-components) to see them all! And please contribute and add your own work to the list so others can find it.
 
-Contribution: 2015-12-03 20:06
+## Contributing
 
-Contribution: 2015-12-07 20:00
+If you want to contribute to `styled-components` please see our [contributing and community guidelines](./CONTRIBUTING.md), they'll help you get set up locally and explain the whole process.
 
-Contribution: 2015-12-09 20:00
+Please also note that all repositories under the `styled-components` organization follow our [Code of Conduct](./CODE_OF_CONDUCT.md), make sure to review and follow it.
 
-Contribution: 2015-12-11 20:00
+## Badge
 
-Contribution: 2015-12-11 20:01
+Let everyone know you're using _styled-components_ → [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-Contribution: 2015-12-11 20:02
-
-Contribution: 2015-12-11 20:03
-
-Contribution: 2015-12-11 20:04
-
-Contribution: 2015-12-14 20:00
-
-Contribution: 2015-12-14 20:01
-
-Contribution: 2015-12-14 20:02
-
-Contribution: 2015-12-14 20:03
-
-Contribution: 2015-12-14 20:04
-
-Contribution: 2015-12-15 20:00
-
-Contribution: 2015-12-15 20:01
-
-Contribution: 2015-12-15 20:02
-
-Contribution: 2015-12-15 20:03
-
-Contribution: 2015-12-21 20:00
-
-Contribution: 2015-12-21 20:01
-
-Contribution: 2015-12-21 20:02
-
-Contribution: 2015-12-21 20:03
-
-Contribution: 2015-12-21 20:04
-
-Contribution: 2015-12-21 20:05
-
-Contribution: 2015-12-22 20:00
-
-Contribution: 2015-12-22 20:01
-
-Contribution: 2015-12-22 20:02
-
-Contribution: 2015-12-23 20:00
-
-Contribution: 2015-12-23 20:01
-
-Contribution: 2015-12-24 20:00
-
-Contribution: 2015-12-24 20:01
-
-Contribution: 2015-12-24 20:02
-
-Contribution: 2015-12-24 20:03
-
-Contribution: 2015-12-28 20:00
-
-Contribution: 2015-12-28 20:01
-
-Contribution: 2015-12-28 20:02
-
-Contribution: 2015-12-28 20:03
-
-Contribution: 2015-12-28 20:04
-
-Contribution: 2015-12-28 20:05
-
-Contribution: 2015-12-28 20:06
-
-Contribution: 2015-12-29 20:00
-
-Contribution: 2015-12-30 20:00
-
-Contribution: 2015-12-31 20:00
-
-Contribution: 2015-12-31 20:01
-
-Contribution: 2015-12-31 20:02
-
-Contribution: 2015-12-31 20:03
-
-Contribution: 2015-12-31 20:04
-
-Contribution: 2015-12-31 20:05
-
-Contribution: 2015-12-31 20:06
-
-Contribution: 2016-01-01 20:00
-
-Contribution: 2016-01-01 20:01
-
-Contribution: 2016-01-01 20:02
-
-Contribution: 2016-01-01 20:03
-
-Contribution: 2016-01-01 20:04
-
-Contribution: 2016-01-01 20:05
-
-Contribution: 2016-01-01 20:06
-
-Contribution: 2016-01-01 20:07
-
-Contribution: 2016-01-04 20:00
-
-Contribution: 2016-01-04 20:01
-
-Contribution: 2016-01-04 20:02
-
-Contribution: 2016-01-05 20:00
-
-Contribution: 2016-01-05 20:01
-
-Contribution: 2016-01-05 20:02
-
-Contribution: 2016-01-06 20:00
-
-Contribution: 2016-01-06 20:01
-
-Contribution: 2016-01-07 20:00
-
-Contribution: 2016-01-08 20:00
-
-Contribution: 2016-01-08 20:01
-
-Contribution: 2016-01-11 20:00
-
-Contribution: 2016-01-11 20:01
-
-Contribution: 2016-01-11 20:02
-
-Contribution: 2016-01-11 20:03
-
-Contribution: 2016-01-11 20:04
-
-Contribution: 2016-01-11 20:05
-
-Contribution: 2016-01-11 20:06
-
-Contribution: 2016-01-12 20:00
-
-Contribution: 2016-01-12 20:01
-
-Contribution: 2016-01-13 20:00
-
-Contribution: 2016-01-13 20:01
-
-Contribution: 2016-01-13 20:02
-
-Contribution: 2016-01-13 20:03
-
-Contribution: 2016-01-14 20:00
-
-Contribution: 2016-01-14 20:01
-
-Contribution: 2016-01-14 20:02
-
-Contribution: 2016-01-15 20:00
-
-Contribution: 2016-01-15 20:01
-
-Contribution: 2016-01-15 20:02
-
-Contribution: 2016-01-15 20:03
-
-Contribution: 2016-01-15 20:04
-
-Contribution: 2016-01-18 20:00
-
-Contribution: 2016-01-18 20:01
-
-Contribution: 2016-01-18 20:02
-
-Contribution: 2016-01-18 20:03
-
-Contribution: 2016-01-18 20:04
-
-Contribution: 2016-01-18 20:05
-
-Contribution: 2016-01-18 20:06
-
-Contribution: 2016-01-19 20:00
-
-Contribution: 2016-01-19 20:01
-
-Contribution: 2016-01-19 20:02
-
-Contribution: 2016-01-19 20:03
-
-Contribution: 2016-01-20 20:00
-
-Contribution: 2016-01-20 20:01
-
-Contribution: 2016-01-20 20:02
-
-Contribution: 2016-01-20 20:03
-
-Contribution: 2016-01-20 20:04
-
-Contribution: 2016-01-20 20:05
-
-Contribution: 2016-01-21 20:00
-
-Contribution: 2016-01-25 20:00
-
-Contribution: 2016-01-25 20:01
-
-Contribution: 2016-01-25 20:02
-
-Contribution: 2016-01-26 20:00
-
-Contribution: 2016-01-26 20:01
-
-Contribution: 2016-01-26 20:02
-
-Contribution: 2016-01-26 20:03
-
-Contribution: 2016-01-28 20:00
-
-Contribution: 2016-02-01 20:00
-
-Contribution: 2016-02-01 20:01
-
-Contribution: 2016-02-01 20:02
-
-Contribution: 2016-02-01 20:03
-
-Contribution: 2016-02-01 20:04
-
-Contribution: 2016-02-02 20:00
-
-Contribution: 2016-02-02 20:01
-
-Contribution: 2016-02-02 20:02
-
-Contribution: 2016-02-02 20:03
-
-Contribution: 2016-02-02 20:04
-
-Contribution: 2016-02-02 20:05
-
-Contribution: 2016-02-02 20:06
-
-Contribution: 2016-02-02 20:07
-
-Contribution: 2016-02-04 20:00
-
-Contribution: 2016-02-04 20:01
-
-Contribution: 2016-02-04 20:02
-
-Contribution: 2016-02-04 20:03
-
-Contribution: 2016-02-04 20:04
-
-Contribution: 2016-02-05 20:00
-
-Contribution: 2016-02-05 20:01
-
-Contribution: 2016-02-05 20:02
-
-Contribution: 2016-02-05 20:03
-
+```md
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+```
